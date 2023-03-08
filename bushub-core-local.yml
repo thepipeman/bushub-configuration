@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bushub_core
+    username: root
+    password: adminadmin
+
+demo:
+  message: Hello From DEV!
