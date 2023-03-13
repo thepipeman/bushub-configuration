@@ -4,5 +4,14 @@ spring:
     username: root
     password: adminadmin
 
+eureka:
+  client:
+    preferIpAddress: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://172.17.0.1:9001/eureka
+
+
 demo:
   message: Hello From DEV!
