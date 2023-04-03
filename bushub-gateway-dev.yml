@@ -1,3 +1,29 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bushub-core
+          uri: lb://bushub-core
+          predicates:
+            - Path=/core/**
+          filters:
+            - RewritePath=/core/(?<path>.*), /$\{path}
+        - id: bushub-booking
+          uri: lb://bushub-booking
+          predicates:
+            - Path=/booking/**
+          filters:
+            - RewritePath=/booking/(?<path>.*), /$\{path}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    gateway:
+      enabled: true
+
 eureka:
   client:
     preferIpAddress: true
