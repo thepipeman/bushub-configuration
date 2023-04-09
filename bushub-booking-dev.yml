@@ -4,6 +4,13 @@ spring:
     username: root
     password: adminadmin
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://172.17.0.1:9100/realms/bushub-cloud
+          jwk-set-uri: http://172.17.0.1:9100/realms/bushub-cloud/protocol/openid-connect/certs
+
 eureka:
   client:
     preferIpAddress: true

@@ -3,6 +3,14 @@ spring:
     url: jdbc:postgresql://172.17.0.1:5432/bushub_core
     username: root
     password: adminadmin
+    
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://172.17.0.1:9100/realms/bushub-cloud
+          jwk-set-uri: http://172.17.0.1:9100/realms/bushub-cloud/protocol/openid-connect/certs
+
 
 eureka:
   client:
